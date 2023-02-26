@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Tree view      -->
+    <record id="visitor_tree_view" model="ir.ui.view">
+        <field name="name">visitor.tree.view</field>
+        <field name="model">visitor.data</field>
+        <field name="arch" type="xml">
+            <tree string="visitor">
+                <field name="visitor_seq"/>
+                <field name="v_phn"/>
+                <field name="v_name"/>
+                <field name="v_gender"/>
+                <field name="v_company"/>
+                <field name="v_email"/>
+                <field name="v_address"/>
+            </tree>
+        </field>
+    </record>
+    <!-- End Tree View   -->
+    <record id="visitor_form_view" model="ir.ui.view">
+        <field name="name">visitor.form.view</field>
+        <field name="model">visitor.data</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group style="text-align:center" string="Visitor Data"/>
+                    <group>
+                        <field style="height:50px; width:50px;" name="v_image" widget="image"/>
+                    </group>
+                    <group>
+                        <field name="I_AM"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="v_name"/>
+                            <field name="v_phn" widget="phone"/>
+                            <field name="v_gender"/>
+                        </group>
+                        <group>
+                            <field name="v_company"/>
+                            <field name="v_email"/>
+                            <field name="v_address"/>
+                        </group>
+                    </group>
+                </sheet>
+                <!-- Add Chatter Form View for  -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+                <!-- End Add chatter Form View for  -->
+            </form>
+        </field>
+    </record>
+    <record id="action_visitor_data" model="ir.actions.act_window" >
+        <field name="name">visitor data</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">visitor.data</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="visitor_menu_id" name="Create Visitor" parent="visitor_management.visitor_root" action="action_visitor_data" sequence="4"/>
+</odoo>
