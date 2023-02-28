@@ -23,7 +23,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group style="text-align:center" string="Visitor Data"/>
+                    <group style="text-align:center" string="Create Visitor"/>
                     <group>
                         <field style="height:50px; width:50px;" name="v_image" widget="image"/>
                     </group>
@@ -54,7 +54,7 @@
         </field>
     </record>
     <record id="action_visitor_data" model="ir.actions.act_window" >
-        <field name="name">visitor data</field>
+        <field name="name">create visitor</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">visitor.data</field>
         <field name="view_mode">tree,form</field>
