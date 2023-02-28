@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #############################################################################
 #
-#    Hundred Solutions AS
+#    Hundred Solutions
 #
 #    Copyright (C) 2023-TODAY Hundred Solutions AS(<https://www.hundredsolutions.com/>)
 #    Author: Arjun Baidya (arjun.b@hundredsolutions.com)
@@ -24,9 +24,9 @@
     'name': 'Visitor Management System',
     'version': '16.0.1.0.0',
     'summary': """Manage your visitor by smart app""",
-    'author': "Hundred Solutions AS",
-    'maintainer': 'Hundred Solutions AS',
-    'company': "Hundred Solutions AS",
+    'author': "Hundred Solutions",
+    'maintainer': 'Hundred Solutions',
+    'company': "Hundred Solutions",
     'website': 'https://www.hundredsolutions.com/',
     'category': 'Industries',
     'description': """
@@ -47,7 +47,7 @@
         'views/visitor.xml',
 
     ],
-    # 'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.png'],
     'license': 'AGPL-3',
     'installable': True,
     'application': True,

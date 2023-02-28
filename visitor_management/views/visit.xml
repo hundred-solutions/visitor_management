@@ -165,7 +165,7 @@
         <field name="view_mode">kanban,tree,form</field>
     </record>
     <record id="action_visit_checkout" model="ir.actions.act_window">
-        <field name="name">visit</field>
+        <field name="name">check-out</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">visit.data</field>
         <field name="domain">[('state','=','checkin')]</field>
