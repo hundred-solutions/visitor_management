@@ -45,6 +45,7 @@
         'data/mail_template.xml',
         'views/visit.xml',
         'views/visitor.xml',
+        "reports/daily_visitor_report.xml"
 
     ],
     'images': ['static/description/banner.png'],

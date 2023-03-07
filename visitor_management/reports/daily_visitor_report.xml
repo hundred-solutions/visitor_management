@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="daily_visitor_pdf_template">
+        <t t-call="web.basic_layout">
+            <div class="page">
+<!--                <t t-foreach="docs" t-as="o">-->
+
+            </div>
+        </t>
+    </template>
+    <record id="property_management_report" model="ir.actions.report">
+        <field name="name">dailyvisitor</field>
+        <field name="model">visit.data</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">visitor_management.daily_visitor_pdf_template</field>
+        <field name="report_file">visitor_management.daily_visitor_pdf_template</field>
+        <field name="print_report_name">'daily_visitor_pdf_report'</field>
+        <field name="binding_model_id" ref="visit_data.model_visit_data"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
