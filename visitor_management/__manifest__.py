@@ -45,6 +45,8 @@
         'data/mail_template.xml',
         'views/visit.xml',
         'views/visitor.xml',
+        'wizard/visitor_report_wizard.xml',
+        'reports/report.xml',
         "reports/daily_visitor_report.xml"
 
     ],
