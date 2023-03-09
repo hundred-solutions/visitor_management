@@ -14,12 +14,12 @@ class VisitorReport(models.TransientModel):
         name_list = []
         refrence_employee = []
         for data in check_in_data:
-            name_list.append(data.v_name.v_name)
+            name_list.append(f'{data.v_name.v_name}  ({data.employee_id.name})')
             refrence_employee.append(data.employee_id.name)
 
         data = {
             'name': name_list,
-            'refrence_emp': refrence_employee
+            # 'refrence_emp': refrence_employee
         }
 
         print("datas", data)
