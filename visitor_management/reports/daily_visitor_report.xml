@@ -3,10 +3,17 @@
     <template id="visitor_report_pdf_template">
         <t t-call="web.basic_layout">
             <div class="page">
-                <p>report</p>
+                <p>Visitors</p>
                 <t t-foreach="name" t-as="nam">
                     <span>
                         <t t-out="nam"/>
+                    </span>
+                </t>
+
+                <p>refrence employee</p>
+                <t t-foreach="refrence_emp" t-as="ref">
+                    <span>
+                        <t t-out="ref"/>
                     </span>
                 </t>
             </div>
