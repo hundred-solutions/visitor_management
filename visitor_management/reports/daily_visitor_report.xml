@@ -4,21 +4,42 @@
         <t t-call="web.basic_layout">
             <div class="page">
                 <h1 style="text-align:center;text-decoration:underline;">Visitor Report</h1>
+                <span>From date: <t t-out="from_date"/></span>  <p>To Date: <t t-out="to_date"/></p>
                 <br/>
-                <div style="display:inline-block;">
-                    <h3>Visitors(Referred by)</h3>
-                    <ol>
-                        <t t-foreach="name" t-as="nam">
-
-                            <li style="padding-top:10px;">
-                                <span style="font-size:24px;">
-                                    <t t-out="nam"/>
-                                </span>
-                            </li>
+                <table class="table table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="text-start">Name</th>
+                            <th>Mobile</th>
+                            <th class="text-start">Entry Date</th>
+                            <th>Refer Person</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="all_data" t-as="data">
+                            <t t-if="data">
+                                <tr>
+                                    <td class="text-end">
+                                        <t  t-out="data['name']"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-out="data['mobile']"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-out="data['entry_date']"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-out="data['refer_person']"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-out="data['reason']"/>
+                                    </td>
+                                </tr>
+                            </t>
                         </t>
-                    </ol>
-                </div>
-
+                    </tbody>
+                </table>
             </div>
         </t>
     </template>

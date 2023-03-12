@@ -10,17 +10,20 @@ class VisitorReport(models.TransientModel):
     def visitor_report(self):
         check_in_data = self.env['visit.data'].search([('check_in_date', '>=', self.date_from),
                                                        ('check_in_date', '<=', self.date_to)])
-        print("check", check_in_data)
         name_list = []
-        refrence_employee = []
         for data in check_in_data:
-            name_list.append(f'{data.v_name.v_name}  ({data.employee_id.name})')
-            refrence_employee.append(data.employee_id.name)
-
-        data = {
-            'name': name_list,
-            # 'refrence_emp': refrence_employee
+            data = {
+                'name': data.v_name.v_name,
+                'mobile': data.v_phn,
+                'entry_date': data.check_in_date.strftime('%m/%d/%Y %I:%M:%S %p'),
+                'refer_person': data.employee_id.name,
+                'reason': data.v_purpose,
+            }
+            name_list.append(data)
+        datas = {
+            'all_data': name_list,
+            'from_date': self.date_from,
+            'to_date': self.date_to
         }
-
-        print("datas", data)
-        return self.env.ref('visitor_management.visitor_report_action').report_action(self, data=data)
+        print("data", datas)
+        return self.env.ref('visitor_management.visitor_report_action').report_action(self, data=datas)
